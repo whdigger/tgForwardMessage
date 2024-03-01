@@ -1,0 +1,10 @@
+.idea/
+.vscode/
+/coverage/
+/vendor/
+/logs/*
+/docker-compose.yml
+/bot.*
+/session.*
+.env
+/resource

@@ -1,0 +1,21 @@
+version: '3.7'
+
+volumes:
+  logs:
+    driver: local
+
+services:
+  php:
+    build:
+      context: ./
+      dockerfile: ./docker/dev/php.docker
+    container_name: "${PROJECT_NAME}_php"
+    working_dir: /var/www
+    command: php -S 0.0.0.0:8080 -t .
+    environment:
+      docker: "true"
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/var/www
+      - logs:/var/www/logs

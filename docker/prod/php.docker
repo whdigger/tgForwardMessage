@@ -1,0 +1,4 @@
+# continue with the official PHP image
+FROM hub.madelineproto.xyz/danog/madelineproto
+# copy the Composer PHAR from the Composer image into the PHP image
+COPY --from=composer:2.7.1 /usr/bin/composer /usr/bin/composer
